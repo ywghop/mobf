@@ -6,56 +6,62 @@
 //
 
 import SwiftUI
-import SwiftData
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
-
     var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+        ZStack {
+            VStack(spacing: 0) {
+                // Верхний цветной контейнер с текстом по центру
+                Text("Hello!!!")
+                    .font(.system(size: 28, weight: .bold))
+                    .foregroundColor(.white)
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 20)
+                    .background(Color.blue)
+
+                Spacer()
+
+                // Картинка по центру
+                Image(systemName: "photo")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 220, height: 220)
+                    .foregroundColor(.gray)
+                    .padding()
+
+                Spacer()
+
+                // Нижняя панель с кнопками
+                HStack {
+                    ForEach(0..<5) { index in
+                        Button(action: {}) {
+                            Image(systemName: index == 4 ? "plus" : "circle")
+                                .font(.system(size: 20, weight: .semibold))
+                        }
+                        .frame(maxWidth: .infinity)
                     }
                 }
-                .onDelete(perform: deleteItems)
+                .padding(.horizontal, 16)
+                .frame(height: 64)
+                .background(Color(UIColor.secondarySystemBackground))
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
-            }
-        } detail: {
-            Text("Select an item")
-        }
-    }
 
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
+            // Плавающая кнопка справа по центру
+            Button(action: {}) {
+                Image(systemName: "plus")
+                    .foregroundColor(.white)
+                    .font(.system(size: 24, weight: .bold))
+                    .frame(width: 56, height: 56)
+                    .background(Color.accentColor)
+                    .clipShape(Circle())
+                    .shadow(color: .black.opacity(0.2), radius: 6, x: 0, y: 3)
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .trailing)
+            .padding(.trailing, 20)
         }
     }
 }
 
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
 }
