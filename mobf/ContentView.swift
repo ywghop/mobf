@@ -9,6 +9,42 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
+        TabView {
+            MainScreen()
+                .tabItem {
+                    Image(systemName: "house")
+                    Text("Главная")
+                }
+
+            Text("Поиск")
+                .tabItem {
+                    Image(systemName: "magnifyingglass")
+                    Text("Поиск")
+                }
+
+            Text("Избранное")
+                .tabItem {
+                    Image(systemName: "star")
+                    Text("Избранное")
+                }
+
+            Text("Уведомления")
+                .tabItem {
+                    Image(systemName: "bell")
+                    Text("Уведомления")
+                }
+
+            Text("Профиль")
+                .tabItem {
+                    Image(systemName: "person")
+                    Text("Профиль")
+                }
+        }
+    }
+}
+
+private struct MainScreen: View {
+    var body: some View {
         ZStack {
             VStack(spacing: 0) {
                 // Верхний цветной контейнер с текстом по центру
@@ -30,20 +66,6 @@ struct ContentView: View {
                     .padding()
 
                 Spacer()
-
-                // Нижняя панель с кнопками
-                HStack {
-                    ForEach(0..<5) { index in
-                        Button(action: {}) {
-                            Image(systemName: index == 4 ? "plus" : "circle")
-                                .font(.system(size: 20, weight: .semibold))
-                        }
-                        .frame(maxWidth: .infinity)
-                    }
-                }
-                .padding(.horizontal, 16)
-                .frame(height: 64)
-                .background(Color(UIColor.secondarySystemBackground))
             }
 
             // Плавающая кнопка справа по центру

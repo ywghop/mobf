@@ -15,7 +15,7 @@
 		E0E81AED2E72E801006B175C /* mobfTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E81AEC2E72E801006B175C /* mobfTests.swift */; };
 		E0E81AF72E72E801006B175C /* mobfUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E81AF62E72E801006B175C /* mobfUITests.swift */; };
 		E0E81AF92E72E801006B175C /* mobfUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E81AF82E72E801006B175C /* mobfUITestsLaunchTests.swift */; };
-		E0E81B062E72EA11006B175C /* mobf in Resources */ = {isa = PBXBuildFile; fileRef = E0E81B052E72EA11006B175C /* mobf */; };
+/* removed stray folder copy that caused duplicate product name */
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +49,7 @@
 		E0E81AF22E72E801006B175C /* mobfUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mobfUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0E81AF62E72E801006B175C /* mobfUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mobfUITests.swift; sourceTree = "<group>"; };
 		E0E81AF82E72E801006B175C /* mobfUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mobfUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		E0E81B052E72EA11006B175C /* mobf */ = {isa = PBXFileReference; lastKnownFileType = folder; name = mobf; sourceTree = "<group>"; };
+/* removed stray folder reference named "mobf" */
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +100,7 @@
 		E0E81AD62E72E7FF006B175C /* mobf */ = {
 			isa = PBXGroup;
 			children = (
-				E0E81B052E72EA11006B175C /* mobf */,
+				/* removed stray folder "mobf" from group to avoid copy */
 				E0E81AD72E72E7FF006B175C /* mobfApp.swift */,
 				E0E81AD92E72E7FF006B175C /* ContentView.swift */,
 				E0E81ADB2E72E7FF006B175C /* Item.swift */,
@@ -241,7 +241,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E0E81B062E72EA11006B175C /* mobf in Resources */,
+				/* removed stray folder resource to avoid duplicate output */
 				E0E81AE12E72E801006B175C /* Preview Assets.xcassets in Resources */,
 				E0E81ADE2E72E801006B175C /* Assets.xcassets in Resources */,
 			);
